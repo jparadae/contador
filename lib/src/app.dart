@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget{
   Widget build(context){
     
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Center(
         // child: HomePage(),
         child: CountVueltas(),
