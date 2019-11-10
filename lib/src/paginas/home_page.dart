@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget{
 
   int _numMariVueltas = 10; 
 
- /*@override
+ @override
   Widget build (BuildContext context){
     return Scaffold(
       appBar: AppBar(
@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget{
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
 
     );
-  }*/
+  }
   
 
 }

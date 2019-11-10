@@ -13,7 +13,7 @@ class _CountVueltasState extends State<CountVueltas>{ //cuento el estado de Mari
     fontSize: 25
   );
 
-  int _numMariVueltas = 10; 
+  int _numMariVueltas = 0; 
 
  @override
   Widget build (BuildContext context){
@@ -21,11 +21,9 @@ class _CountVueltasState extends State<CountVueltas>{ //cuento el estado de Mari
       appBar: AppBar(
         title: Text('Hora 4:20!'),
         centerTitle: true,
-       // backgroundColor: Color(
-          
-       // ),
-        
+        backgroundColor: Colors.amber
       ),
+
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,18 +42,32 @@ class _CountVueltasState extends State<CountVueltas>{ //cuento el estado de Mari
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        FloatingActionButton(child: Icon(Icons.remove), onPressed: null, backgroundColor: Colors.green,),
-        SizedBox(width: 10,),
-        FloatingActionButton(child: Icon(Icons.refresh), onPressed: null, backgroundColor: Colors.yellow,),
-        SizedBox(width: 10,),
-        FloatingActionButton(child: Icon(Icons.flight), onPressed: null, backgroundColor: Colors.red,),
+        FloatingActionButton(child: Icon(Icons.remove), onPressed: _restaVuelta, backgroundColor: Colors.green,),
+        SizedBox(width: 10.0,),
+        FloatingActionButton(child: Icon(Icons.refresh), onPressed: _reloadVuelta, backgroundColor: Colors.amber,),
+        SizedBox(width: 10.0,),
+        FloatingActionButton(child: Icon(Icons.flight), onPressed: _sumVuelta, backgroundColor: Colors.red,),
        // SizedBox(width: 1,),
       ],
     );
+  }
+  
+  void _sumVuelta(){
+    setState(() {
+      _numMariVueltas++;
+    });
+  }
+  
+  void _restaVuelta(){
+    setState(() {
+      _numMariVueltas--;
+    });
+  }
 
-
-
-    
+  void _reloadVuelta(){
+    setState(() {
+      _numMariVueltas = 0;
+    });
   }
 } 
 
