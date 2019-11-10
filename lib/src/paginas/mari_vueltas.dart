@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class HomePage extends StatelessWidget{
-  final _estiloText = new TextStyle(
+class CountVueltas extends StatefulWidget{
+ @override
+ createState(){
+   return _CountVueltasState();
+ }
+
+}
+
+class _CountVueltasState extends State<CountVueltas>{ //cuento el estado de MariVueltas con el State de este widwet: Esto es una clase privada
+ final _estiloText = new TextStyle(
     fontSize: 25
   );
 
   int _numMariVueltas = 10; 
 
- /*@override
+ @override
   Widget build (BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text('Count 420!'),
+        title: Text('Hora 4:20!'),
         centerTitle: true,
         
       ),
@@ -29,13 +36,17 @@ class HomePage extends StatelessWidget{
         
         onPressed: (){
           print('Es Hora de 420 baby!');
-          _numMariVueltas++; //+1
+         // _numMariVueltas++; //+1
+          setState(() {
+            _numMariVueltas++;  //yeah lo hice!
+          });
         },
         child: Icon(Icons.cloud),),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
 
     );
-  }*/
-  
+  }
+ 
+} 
 
-}
+
