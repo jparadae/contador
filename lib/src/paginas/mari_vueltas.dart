@@ -21,6 +21,9 @@ class _CountVueltasState extends State<CountVueltas>{ //cuento el estado de Mari
       appBar: AppBar(
         title: Text('Hora 4:20!'),
         centerTitle: true,
+       // backgroundColor: Color(
+          
+       // ),
         
       ),
       body: Center(
@@ -32,21 +35,28 @@ class _CountVueltasState extends State<CountVueltas>{ //cuento el estado de Mari
           ],
         )
       ),
-      floatingActionButton: FloatingActionButton(
-        
-        onPressed: (){
-          print('Es Hora de 420 baby!');
-         // _numMariVueltas++; //+1
-          setState(() {
-            _numMariVueltas++;  //yeah lo hice!
-          });
-        },
-        child: Icon(Icons.cloud),),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-
+      floatingActionButton: _crearBotones()
+       // floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
     );
   }
- 
+
+  Widget _crearBotones(){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        FloatingActionButton(child: Icon(Icons.remove), onPressed: null, backgroundColor: Colors.green,),
+        SizedBox(width: 10,),
+        FloatingActionButton(child: Icon(Icons.refresh), onPressed: null, backgroundColor: Colors.yellow,),
+        SizedBox(width: 10,),
+        FloatingActionButton(child: Icon(Icons.flight), onPressed: null, backgroundColor: Colors.red,),
+       // SizedBox(width: 1,),
+      ],
+    );
+
+
+
+    
+  }
 } 
 
 
